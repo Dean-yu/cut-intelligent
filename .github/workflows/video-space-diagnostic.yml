@@ -1,0 +1,58 @@
+name: Video Space Diagnostic
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/video-space-diagnostic.yml'
+      - 'video_generation/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  inspect-spaces:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install client
+        run: pip install -U gradio_client pillow
+      - name: Inspect public video Spaces
+        run: |
+          mkdir -p outputs
+          python - <<'PY'
+          import json, traceback
+          from gradio_client import Client
+
+          spaces = [
+              'zerogpu-aoti/wan2-2-fp8da-aoti-faster',
+              'r3gm/wan2-2-fp8da-aoti-preview-2c',
+              'Lightricks/ltx-video-distilled',
+              'Saravutw/WAN2.2_I2V_LIGHTNING_4-8step_custom',
+          ]
+          result = {}
+          for space in spaces:
+              try:
+                  print(f'Connecting to {space}', flush=True)
+                  client = Client(space, verbose=False)
+                  api = client.view_api(return_format='dict')
+                  result[space] = {'ok': True, 'api': api}
+              except Exception as e:
+                  result[space] = {'ok': False, 'error': repr(e), 'trace': traceback.format_exc()}
+          with open('outputs/api_info.json', 'w', encoding='utf-8') as f:
+              json.dump(result, f, ensure_ascii=False, indent=2, default=str)
+          print(json.dumps(result, ensure_ascii=False, indent=2, default=str))
+          PY
+      - name: Commit diagnostics
+        if: always()
+        run: |
+          git config user.name 'video-generation-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add outputs/api_info.json || true
+          git diff --cached --quiet || git commit -m 'chore: save video space API diagnostics'
+          git push
