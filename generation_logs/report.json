@@ -1,0 +1,47 @@
+{
+  "worlds": {
+    "jitian": {
+      "world": "jitian",
+      "final": "/home/runner/work/cut-intelligent/cut-intelligent/generated_videos/02_极天界_密令.mp4",
+      "bytes": 4869532,
+      "shots": [
+        {
+          "status": "generated",
+          "space": "zerogpu-aoti/wan2-2-fp8da-aoti-faster",
+          "seed": 71750,
+          "bytes": 611808,
+          "path": "/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_1_raw.mp4",
+          "shot": 1
+        },
+        {
+          "status": "generated",
+          "space": "zerogpu-aoti/wan2-2-fp8da-aoti-faster",
+          "seed": 71847,
+          "bytes": 613850,
+          "path": "/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_2_raw.mp4",
+          "shot": 2
+        },
+        {
+          "status": "generated",
+          "space": "zerogpu-aoti/wan2-2-fp8da-aoti-faster",
+          "seed": 71944,
+          "bytes": 580095,
+          "path": "/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_3_raw.mp4",
+          "shot": 3
+        }
+      ]
+    }
+  },
+  "errors": {
+    "tianyuan": {
+      "type": "Error",
+      "message": "Incorrect padding",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py\", line 320, in <module>\n    reports[\"worlds\"][world] = future.result()\n                               ^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py\", line 449, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py\", line 58, in run\n    result = self.fn(*self.args, **self.kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py\", line 285, in generate_world\n    current_frame = prepare_source(world)\n                    ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py\", line 107, in prepare_source\n    raw = base64.b64decode(SOURCES[world].read_text(encoding=\"utf-8\").strip())\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/base64.py\", line 88, in b64decode\n    return binascii.a2b_base64(s, strict_mode=validate)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nbinascii.Error: Incorrect padding\n"
+    },
+    "shengmeng": {
+      "type": "FileNotFoundError",
+      "message": "[Errno 2] No such file or directory: '/home/runner/work/cut-intelligent/cut-intelligent/video_generation/inputs/shengmeng.b64'",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py\", line 320, in <module>\n    reports[\"worlds\"][world] = future.result()\n                               ^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py\", line 449, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py\", line 58, in run\n    result = self.fn(*self.args, **self.kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py\", line 285, in generate_world\n    current_frame = prepare_source(world)\n                    ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py\", line 107, in prepare_source\n    raw = base64.b64decode(SOURCES[world].read_text(encoding=\"utf-8\").strip())\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/pathlib.py\", line 1058, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/pathlib.py\", line 1044, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/home/runner/work/cut-intelligent/cut-intelligent/video_generation/inputs/shengmeng.b64'\n"
+    }
+  }
+}

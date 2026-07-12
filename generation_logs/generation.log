@@ -1,0 +1,564 @@
+[2026-07-12 06:05:56] === START WORLD tianyuan ===
+[2026-07-12 06:05:56] === START WORLD jitian ===
+[2026-07-12 06:05:56] === START WORLD shengmeng ===
+[2026-07-12 06:05:56] Generate jitian_1_raw.mp4 via r3gm/wan2-2-fp8da-aoti-preview-2c; cycle=1; seed=71750
+[2026-07-12 06:05:56] FATAL WORLD ERROR tianyuan: Incorrect padding
+[2026-07-12 06:05:56] Traceback (most recent call last):
+  File "/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py", line 320, in <module>
+    reports["worlds"][world] = future.result()
+                               ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py", line 285, in generate_world
+    current_frame = prepare_source(world)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py", line 107, in prepare_source
+    raw = base64.b64decode(SOURCES[world].read_text(encoding="utf-8").strip())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/base64.py", line 88, in b64decode
+    return binascii.a2b_base64(s, strict_mode=validate)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+binascii.Error: Incorrect padding
+
+[2026-07-12 06:05:56] FATAL WORLD ERROR shengmeng: [Errno 2] No such file or directory: '/home/runner/work/cut-intelligent/cut-intelligent/video_generation/inputs/shengmeng.b64'
+[2026-07-12 06:05:56] Traceback (most recent call last):
+  File "/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py", line 320, in <module>
+    reports["worlds"][world] = future.result()
+                               ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py", line 285, in generate_world
+    current_frame = prepare_source(world)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py", line 107, in prepare_source
+    raw = base64.b64decode(SOURCES[world].read_text(encoding="utf-8").strip())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/pathlib.py", line 1058, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/runner/work/cut-intelligent/cut-intelligent/video_generation/inputs/shengmeng.b64'
+
+[2026-07-12 06:05:56] ERROR r3gm/wan2-2-fp8da-aoti-preview-2c cycle 1: TypeError: No value provided for required argument: last_image
+[2026-07-12 06:05:56] Traceback (most recent call last):
+  File "/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py", line 165, in generate_one
+    result = client.predict(
+             ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/gradio_client/client.py", line 497, in predict
+    return self.submit(
+           ^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/gradio_client/client.py", line 548, in submit
+    args = utils.construct_args(endpoint.parameters_info, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/gradio_client/utils.py", line 1352, in construct_args
+    raise TypeError(
+TypeError: No value provided for required argument: last_image
+
+[2026-07-12 06:06:11] Generate jitian_1_raw.mp4 via zerogpu-aoti/wan2-2-fp8da-aoti-faster; cycle=1; seed=71750
+[2026-07-12 06:07:19] DONE jitian_1_raw.mp4 via zerogpu-aoti/wan2-2-fp8da-aoti-faster: 611808 bytes
+[2026-07-12 06:07:19] RUN ffmpeg -y -sseof -0.08 -i /home/runner/work/cut-intelligent/cut-intelligent/work/jitian_1_raw.mp4 -frames:v 1 -vf scale=832:468:force_original_aspect_ratio=increase,crop=832:468 -q:v 2 /home/runner/work/cut-intelligent/cut-intelligent/work/jitian_1_last.jpg
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_1_raw.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf59.27.100
+  Duration: 00:00:04.06, start: 0.000000, bitrate: 1204 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 832x480 [SAR 1:1 DAR 26:15], 1202 kb/s, 16 fps, 16 tbr, 16384 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc59.37.100 libx264
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+[swscaler @ 0x55a4d4491ec0] deprecated pixel format used, make sure you did set range correctly
+Output #0, image2, to '/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_1_last.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Video: mjpeg, yuvj420p(pc, progressive), 832x468 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 16 fps, 16 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 mjpeg
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=2.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    
+[image2 @ 0x55a4d44a2b40] The specified filename '/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_1_last.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 0x55a4d44a2b40] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 0x55a4d43c4800] video:71kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+frame=    1 fps=0.0 q=2.0 Lsize=N/A time=00:00:00.00 bitrate=N/A speed=   0x    
+
+[2026-07-12 06:07:19] Generate jitian_2_raw.mp4 via r3gm/wan2-2-fp8da-aoti-preview-2c; cycle=1; seed=71847
+[2026-07-12 06:07:20] ERROR r3gm/wan2-2-fp8da-aoti-preview-2c cycle 1: TypeError: No value provided for required argument: last_image
+[2026-07-12 06:07:20] Traceback (most recent call last):
+  File "/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py", line 165, in generate_one
+    result = client.predict(
+             ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/gradio_client/client.py", line 497, in predict
+    return self.submit(
+           ^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/gradio_client/client.py", line 548, in submit
+    args = utils.construct_args(endpoint.parameters_info, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/gradio_client/utils.py", line 1352, in construct_args
+    raise TypeError(
+TypeError: No value provided for required argument: last_image
+
+[2026-07-12 06:07:35] Generate jitian_2_raw.mp4 via zerogpu-aoti/wan2-2-fp8da-aoti-faster; cycle=1; seed=71847
+[2026-07-12 06:08:16] DONE jitian_2_raw.mp4 via zerogpu-aoti/wan2-2-fp8da-aoti-faster: 613850 bytes
+[2026-07-12 06:08:16] RUN ffmpeg -y -sseof -0.08 -i /home/runner/work/cut-intelligent/cut-intelligent/work/jitian_2_raw.mp4 -frames:v 1 -vf scale=832:468:force_original_aspect_ratio=increase,crop=832:468 -q:v 2 /home/runner/work/cut-intelligent/cut-intelligent/work/jitian_2_last.jpg
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_2_raw.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf59.27.100
+  Duration: 00:00:04.06, start: 0.000000, bitrate: 1208 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 832x480 [SAR 1:1 DAR 26:15], 1206 kb/s, 16 fps, 16 tbr, 16384 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc59.37.100 libx264
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+[swscaler @ 0x55cc1a57abc0] deprecated pixel format used, make sure you did set range correctly
+Output #0, image2, to '/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_2_last.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Video: mjpeg, yuvj420p(pc, progressive), 832x468 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 16 fps, 16 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 mjpeg
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=2.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    
+[image2 @ 0x55cc1a4af140] The specified filename '/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_2_last.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 0x55cc1a4af140] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 0x55cc1a4ad880] video:35kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+frame=    1 fps=0.0 q=2.0 Lsize=N/A time=00:00:00.00 bitrate=N/A speed=   0x    
+
+[2026-07-12 06:08:16] Generate jitian_3_raw.mp4 via r3gm/wan2-2-fp8da-aoti-preview-2c; cycle=1; seed=71944
+[2026-07-12 06:08:16] ERROR r3gm/wan2-2-fp8da-aoti-preview-2c cycle 1: TypeError: No value provided for required argument: last_image
+[2026-07-12 06:08:16] Traceback (most recent call last):
+  File "/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py", line 165, in generate_one
+    result = client.predict(
+             ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/gradio_client/client.py", line 497, in predict
+    return self.submit(
+           ^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/gradio_client/client.py", line 548, in submit
+    args = utils.construct_args(endpoint.parameters_info, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/gradio_client/utils.py", line 1352, in construct_args
+    raise TypeError(
+TypeError: No value provided for required argument: last_image
+
+[2026-07-12 06:08:31] Generate jitian_3_raw.mp4 via zerogpu-aoti/wan2-2-fp8da-aoti-faster; cycle=1; seed=71944
+[2026-07-12 06:09:12] DONE jitian_3_raw.mp4 via zerogpu-aoti/wan2-2-fp8da-aoti-faster: 580095 bytes
+[2026-07-12 06:09:12] RUN ffmpeg -y -i /home/runner/work/cut-intelligent/cut-intelligent/work/jitian_1_raw.mp4 -t 4.0 -vf scale=1280:720:force_original_aspect_ratio=increase,crop=1280:720,fps=24,format=yuv420p -an -c:v libx264 -preset medium -crf 19 -movflags +faststart /home/runner/work/cut-intelligent/cut-intelligent/work/jitian_1_norm.mp4
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_1_raw.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf59.27.100
+  Duration: 00:00:04.06, start: 0.000000, bitrate: 1204 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 832x480 [SAR 1:1 DAR 26:15], 1202 kb/s, 16 fps, 16 tbr, 16384 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc59.37.100 libx264
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 0x55be254fd000] using SAR=1599/1600
+[libx264 @ 0x55be254fd000] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
+[libx264 @ 0x55be254fd000] profile High, level 3.1, 4:2:0, 8-bit
+[libx264 @ 0x55be254fd000] 264 - core 164 r3108 31e19f9 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=24 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=19.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_1_norm.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1280x720 [SAR 1599:1600 DAR 533:300], q=2-31, 24 fps, 12288 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A speed=N/A    
+frame=   14 fps=0.0 q=24.0 size=     256kB time=00:00:00.50 bitrate=4195.1kbits/s speed=0.956x    
+frame=   44 fps= 43 q=24.0 size=     768kB time=00:00:01.79 bitrate=3511.7kbits/s speed=1.75x    
+[mp4 @ 0x55be255d9b40] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 0x55be254fb840] video:1487kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.134083%
+frame=   96 fps= 59 q=-1.0 Lsize=    1489kB time=00:00:03.87 bitrate=3146.8kbits/s speed=2.37x    
+[libx264 @ 0x55be254fd000] frame I:1     Avg QP:19.35  size: 98390
+[libx264 @ 0x55be254fd000] frame P:26    Avg QP:18.96  size: 43249
+[libx264 @ 0x55be254fd000] frame B:69    Avg QP:23.35  size:  4328
+[libx264 @ 0x55be254fd000] consecutive B-frames:  1.0%  8.3%  3.1% 87.5%
+[libx264 @ 0x55be254fd000] mb I  I16..4:  0.6% 85.2% 14.2%
+[libx264 @ 0x55be254fd000] mb P  I16..4:  0.1%  3.8%  0.5%  P16..4: 35.1% 39.0% 19.0%  0.0%  0.0%    skip: 2.5%
+[libx264 @ 0x55be254fd000] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8: 27.7%  4.9%  1.1%  direct: 2.4%  skip:63.8%  L0:33.2% L1:45.8% BI:20.9%
+[libx264 @ 0x55be254fd000] 8x8 transform intra:85.2% inter:66.6%
+[libx264 @ 0x55be254fd000] coded y,uvDC,uvAC intra: 95.1% 80.4% 38.7% inter: 26.3% 21.1% 0.2%
+[libx264 @ 0x55be254fd000] i16 v,h,dc,p: 33% 15%  5% 47%
+[libx264 @ 0x55be254fd000] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 29% 19%  9%  4%  7%  8%  7%  9%  9%
+[libx264 @ 0x55be254fd000] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 19%  7%  5%  9% 10%  8%  9%  8%
+[libx264 @ 0x55be254fd000] i8c dc,h,v,p: 47% 19% 25%  9%
+[libx264 @ 0x55be254fd000] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x55be254fd000] ref P L0: 60.5% 25.6% 13.2%  0.7%
+[libx264 @ 0x55be254fd000] ref B L0: 97.2%  2.6%  0.1%
+[libx264 @ 0x55be254fd000] ref B L1: 99.0%  1.0%
+[libx264 @ 0x55be254fd000] kb/s:3043.00
+
+[2026-07-12 06:09:14] RUN ffmpeg -y -i /home/runner/work/cut-intelligent/cut-intelligent/work/jitian_2_raw.mp4 -t 4.0 -vf scale=1280:720:force_original_aspect_ratio=increase,crop=1280:720,fps=24,format=yuv420p -an -c:v libx264 -preset medium -crf 19 -movflags +faststart /home/runner/work/cut-intelligent/cut-intelligent/work/jitian_2_norm.mp4
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_2_raw.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf59.27.100
+  Duration: 00:00:04.06, start: 0.000000, bitrate: 1208 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 832x480 [SAR 1:1 DAR 26:15], 1206 kb/s, 16 fps, 16 tbr, 16384 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc59.37.100 libx264
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 0x56243f717dc0] using SAR=1599/1600
+[libx264 @ 0x56243f717dc0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
+[libx264 @ 0x56243f717dc0] profile High, level 3.1, 4:2:0, 8-bit
+[libx264 @ 0x56243f717dc0] 264 - core 164 r3108 31e19f9 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=24 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=19.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_2_norm.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1280x720 [SAR 1599:1600 DAR 533:300], q=2-31, 24 fps, 12288 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A speed=N/A    
+frame=   16 fps=0.0 q=24.0 size=     256kB time=00:00:00.58 bitrate=3595.8kbits/s speed=1.14x    
+[mp4 @ 0x56243f69c0c0] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 0x56243f69a800] video:1460kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.135423%
+frame=   96 fps= 56 q=-1.0 Lsize=    1462kB time=00:00:03.87 bitrate=3091.3kbits/s speed=2.28x    
+[libx264 @ 0x56243f717dc0] frame I:1     Avg QP:18.66  size: 91107
+[libx264 @ 0x56243f717dc0] frame P:28    Avg QP:19.81  size: 34370
+[libx264 @ 0x56243f717dc0] frame B:67    Avg QP:22.46  size:  6584
+[libx264 @ 0x56243f717dc0] consecutive B-frames:  1.0% 14.6%  9.4% 75.0%
+[libx264 @ 0x56243f717dc0] mb I  I16..4:  0.6% 83.8% 15.6%
+[libx264 @ 0x56243f717dc0] mb P  I16..4:  2.4% 21.2%  2.6%  P16..4: 32.8% 28.2% 10.4%  0.0%  0.0%    skip: 2.4%
+[libx264 @ 0x56243f717dc0] mb B  I16..4:  0.4%  1.9%  0.2%  B16..8: 27.3%  7.3%  1.2%  direct: 2.8%  skip:58.9%  L0:38.3% L1:48.3% BI:13.5%
+[libx264 @ 0x56243f717dc0] 8x8 transform intra:80.1% inter:73.4%
+[libx264 @ 0x56243f717dc0] coded y,uvDC,uvAC intra: 68.8% 70.0% 26.0% inter: 23.4% 20.9% 0.2%
+[libx264 @ 0x56243f717dc0] i16 v,h,dc,p: 34% 32%  6% 28%
+[libx264 @ 0x56243f717dc0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 19% 12%  6%  6%  7%  6%  8%  7%
+[libx264 @ 0x56243f717dc0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 33% 19% 10%  5%  9%  9%  6%  6%  4%
+[libx264 @ 0x56243f717dc0] i8c dc,h,v,p: 48% 21% 22%  9%
+[libx264 @ 0x56243f717dc0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x56243f717dc0] ref P L0: 64.7% 21.2% 11.8%  2.3%
+[libx264 @ 0x56243f717dc0] ref B L0: 94.5%  4.5%  1.0%
+[libx264 @ 0x56243f717dc0] ref B L1: 99.1%  0.9%
+[libx264 @ 0x56243f717dc0] kb/s:2989.25
+
+[2026-07-12 06:09:16] RUN ffmpeg -y -i /home/runner/work/cut-intelligent/cut-intelligent/work/jitian_3_raw.mp4 -t 4.0 -vf scale=1280:720:force_original_aspect_ratio=increase,crop=1280:720,fps=24,format=yuv420p -an -c:v libx264 -preset medium -crf 19 -movflags +faststart /home/runner/work/cut-intelligent/cut-intelligent/work/jitian_3_norm.mp4
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_3_raw.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf59.27.100
+  Duration: 00:00:04.06, start: 0.000000, bitrate: 1142 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 832x480 [SAR 1:1 DAR 26:15], 1139 kb/s, 16 fps, 16 tbr, 16384 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc59.37.100 libx264
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 0x564619ae7140] using SAR=1599/1600
+[libx264 @ 0x564619ae7140] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
+[libx264 @ 0x564619ae7140] profile High, level 3.1, 4:2:0, 8-bit
+[libx264 @ 0x564619ae7140] 264 - core 164 r3108 31e19f9 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=24 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=19.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_3_norm.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1280x720 [SAR 1599:1600 DAR 533:300], q=2-31, 24 fps, 12288 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A speed=N/A    
+frame=   13 fps=0.0 q=24.0 size=       0kB time=00:00:00.45 bitrate=   0.8kbits/s speed=0.883x    
+frame=   46 fps= 44 q=24.0 size=     512kB time=00:00:01.79 bitrate=2341.2kbits/s speed=1.71x    
+[mp4 @ 0x564619bbd740] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 0x564619ae5980] video:1367kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.143809%
+frame=   96 fps= 55 q=-1.0 Lsize=    1369kB time=00:00:03.87 bitrate=2894.0kbits/s speed=2.21x    
+[libx264 @ 0x564619ae7140] frame I:2     Avg QP:16.97  size: 31211
+[libx264 @ 0x564619ae7140] frame P:34    Avg QP:20.32  size: 27902
+[libx264 @ 0x564619ae7140] frame B:60    Avg QP:21.47  size:  6467
+[libx264 @ 0x564619ae7140] consecutive B-frames:  8.3% 20.8% 12.5% 58.3%
+[libx264 @ 0x564619ae7140] mb I  I16..4: 10.8% 76.4% 12.9%
+[libx264 @ 0x564619ae7140] mb P  I16..4:  6.5% 34.9%  3.8%  P16..4: 28.4% 16.4%  5.1%  0.0%  0.0%    skip: 4.7%
+[libx264 @ 0x564619ae7140] mb B  I16..4:  0.6%  2.9%  0.3%  B16..8: 25.5%  6.7%  1.0%  direct: 2.5%  skip:60.6%  L0:43.1% L1:46.8% BI:10.1%
+[libx264 @ 0x564619ae7140] 8x8 transform intra:76.9% inter:78.2%
+[libx264 @ 0x564619ae7140] coded y,uvDC,uvAC intra: 60.2% 65.7% 20.8% inter: 18.7% 19.4% 0.3%
+[libx264 @ 0x564619ae7140] i16 v,h,dc,p: 33% 24%  5% 39%
+[libx264 @ 0x564619ae7140] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 22%  9%  5%  7%  6% 10%  7%  5%
+[libx264 @ 0x564619ae7140] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 34% 24%  8%  3%  9%  7%  9%  4%  3%
+[libx264 @ 0x564619ae7140] i8c dc,h,v,p: 46% 23% 22%  9%
+[libx264 @ 0x564619ae7140] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x564619ae7140] ref P L0: 67.8% 20.9%  9.1%  2.2%
+[libx264 @ 0x564619ae7140] ref B L0: 92.9%  5.9%  1.2%
+[libx264 @ 0x564619ae7140] ref B L1: 99.3%  0.7%
+[libx264 @ 0x564619ae7140] kb/s:2798.16
+
+[2026-07-12 06:09:18] RUN ffmpeg -y -i /home/runner/work/cut-intelligent/cut-intelligent/work/jitian_1_norm.mp4 -i /home/runner/work/cut-intelligent/cut-intelligent/work/jitian_2_norm.mp4 -i /home/runner/work/cut-intelligent/cut-intelligent/work/jitian_3_norm.mp4 -filter_complex [0:v][1:v]xfade=transition=fade:duration=0.25:offset=3.75[v01];[v01][2:v]xfade=transition=fade:duration=0.25:offset=7.50,fade=t=in:st=0:d=0.35,fade=t=out:st=11.10:d=0.40,format=yuv420p[v] -map [v] -an -c:v libx264 -preset medium -crf 18 -movflags +faststart /home/runner/work/cut-intelligent/cut-intelligent/work/jitian_silent.mp4
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_1_norm.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Duration: 00:00:04.00, start: 0.000000, bitrate: 3048 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1280x720 [SAR 1599:1600 DAR 533:300], 3044 kb/s, 24 fps, 24 tbr, 12288 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 libx264
+Input #1, mov,mp4,m4a,3gp,3g2,mj2, from '/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_2_norm.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Duration: 00:00:04.00, start: 0.000000, bitrate: 2994 kb/s
+  Stream #1:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1280x720 [SAR 1599:1600 DAR 533:300], 2990 kb/s, 24 fps, 24 tbr, 12288 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 libx264
+Input #2, mov,mp4,m4a,3gp,3g2,mj2, from '/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_3_norm.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Duration: 00:00:04.00, start: 0.000000, bitrate: 2803 kb/s
+  Stream #2:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1280x720 [SAR 1599:1600 DAR 533:300], 2799 kb/s, 24 fps, 24 tbr, 12288 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 libx264
+Stream mapping:
+  Stream #0:0 (h264) -> xfade
+  Stream #1:0 (h264) -> xfade
+  Stream #2:0 (h264) -> xfade
+  format:default -> Stream #0:0 (libx264)
+Press [q] to stop, [?] for help
+[libx264 @ 0x558e22fd7840] using SAR=1599/1600
+[libx264 @ 0x558e22fd7840] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
+[libx264 @ 0x558e22fd7840] profile High, level 3.1, 4:2:0, 8-bit
+[libx264 @ 0x558e22fd7840] 264 - core 164 r3108 31e19f9 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=24 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_silent.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1280x720 [SAR 1599:1600 DAR 533:300], q=2-31, 24 fps, 12288 tbn
+    Metadata:
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A speed=N/A    
+frame=    5 fps=0.0 q=23.0 size=       0kB time=00:00:00.12 bitrate=   3.1kbits/s speed=0.227x    
+frame=   33 fps= 31 q=23.0 size=     512kB time=00:00:01.29 bitrate=3247.5kbits/s speed=1.23x    
+frame=   62 fps= 40 q=23.0 size=    1024kB time=00:00:02.50 bitrate=3355.6kbits/s speed=1.61x    
+frame=   93 fps= 45 q=23.0 size=    1536kB time=00:00:03.75 bitrate=3355.5kbits/s speed= 1.8x    
+frame=  123 fps= 46 q=23.0 size=    2048kB time=00:00:05.04 bitrate=3327.8kbits/s speed= 1.9x    
+frame=  151 fps= 48 q=23.0 size=    2304kB time=00:00:06.20 bitrate=3040.2kbits/s speed=1.96x    
+frame=  178 fps= 48 q=23.0 size=    2816kB time=00:00:07.33 bitrate=3145.8kbits/s speed=1.99x    
+frame=  206 fps= 49 q=23.0 size=    3328kB time=00:00:08.45 bitrate=3223.3kbits/s speed=   2x    
+[mp4 @ 0x558e22fd6800] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 0x558e22fd6700] video:4476kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.090253%
+frame=  276 fps= 52 q=-1.0 Lsize=    4480kB time=00:00:11.37 bitrate=3226.7kbits/s speed=2.16x    
+[libx264 @ 0x558e22fd7840] frame I:4     Avg QP:12.62  size: 29171
+[libx264 @ 0x558e22fd7840] frame P:96    Avg QP:18.49  size: 35537
+[libx264 @ 0x558e22fd7840] frame B:176   Avg QP:21.46  size:  5993
+[libx264 @ 0x558e22fd7840] consecutive B-frames:  6.2% 23.2%  9.8% 60.9%
+[libx264 @ 0x558e22fd7840] mb I  I16..4: 30.6% 59.2% 10.2%
+[libx264 @ 0x558e22fd7840] mb P  I16..4:  3.4% 24.1%  2.5%  P16..4: 30.4% 25.7% 11.2%  0.0%  0.0%    skip: 2.7%
+[libx264 @ 0x558e22fd7840] mb B  I16..4:  0.4%  1.6%  0.2%  B16..8: 27.3%  5.9%  1.0%  direct: 4.0%  skip:59.5%  L0:38.7% L1:46.0% BI:15.2%
+[libx264 @ 0x558e22fd7840] 8x8 transform intra:77.6% inter:70.4%
+[libx264 @ 0x558e22fd7840] coded y,uvDC,uvAC intra: 63.4% 66.5% 22.4% inter: 24.9% 24.0% 0.3%
+[libx264 @ 0x558e22fd7840] i16 v,h,dc,p: 47% 21%  5% 27%
+[libx264 @ 0x558e22fd7840] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 21% 11%  5%  6%  7%  8%  7%  6%
+[libx264 @ 0x558e22fd7840] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 33% 22% 10%  4%  8%  7%  7%  5%  4%
+[libx264 @ 0x558e22fd7840] i8c dc,h,v,p: 49% 20% 22%  9%
+[libx264 @ 0x558e22fd7840] Weighted P-Frames: Y:11.5% UV:9.4%
+[libx264 @ 0x558e22fd7840] ref P L0: 65.2% 23.3%  9.4%  2.0%  0.1%
+[libx264 @ 0x558e22fd7840] ref B L0: 94.4%  4.9%  0.7%
+[libx264 @ 0x558e22fd7840] ref B L1: 99.5%  0.5%
+[libx264 @ 0x558e22fd7840] kb/s:3188.23
+
+[2026-07-12 06:09:24] RUN ffmpeg -y -i /home/runner/work/cut-intelligent/cut-intelligent/work/jitian_silent.mp4 -i /home/runner/work/cut-intelligent/cut-intelligent/work/jitian_score.wav -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -b:a 192k -shortest -movflags +faststart /home/runner/work/cut-intelligent/cut-intelligent/generated_videos/02_极天界_密令.mp4
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_silent.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Duration: 00:00:11.50, start: 0.000000, bitrate: 3191 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1280x720 [SAR 1599:1600 DAR 533:300], 3188 kb/s, 24 fps, 24 tbr, 12288 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 libx264
+[aist#1:0/pcm_s16le @ 0x5652b0956a00] Guessed Channel Layout: stereo
+Input #1, wav, from '/home/runner/work/cut-intelligent/cut-intelligent/work/jitian_score.wav':
+  Duration: 00:00:11.50, bitrate: 1536 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, 2 channels, s16, 1536 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (copy)
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+Output #0, mp4, to '/home/runner/work/cut-intelligent/cut-intelligent/generated_videos/02_极天界_密令.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1280x720 [SAR 1599:1600 DAR 533:300], q=2-31, 3188 kb/s, 24 fps, 24 tbr, 12288 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 libx264
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 192 kb/s
+    Metadata:
+      encoder         : Lavc60.31.102 aac
+size=       0kB time=N/A bitrate=N/A speed=N/A    
+[mp4 @ 0x5652b0879840] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 0x5652b098bbc0] video:4476kB audio:270kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.191782%
+size=    4755kB time=00:00:11.49 bitrate=3387.9kbits/s speed=53.2x    
+[aac @ 0x5652b0888480] Qavg: 561.354
+
+[2026-07-12 06:09:24] === DONE WORLD jitian: 02_极天界_密令.mp4 (4869532 bytes) ===
+[2026-07-12 06:09:24] RUN zip -j -9 /home/runner/work/cut-intelligent/cut-intelligent/generated_videos/修真四万年_三界电影短片.zip /home/runner/work/cut-intelligent/cut-intelligent/generated_videos/02_极天界_密令.mp4
+  adding: 02_极天界_密令.mp4 (deflated 0%)
+
