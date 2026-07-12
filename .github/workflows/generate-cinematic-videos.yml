@@ -1,0 +1,60 @@
+name: Generate Cultivation Cinematic Videos
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/generate-cinematic-videos.yml'
+      - 'video_generation/generate.py'
+      - 'video_generation/inputs/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install video generation client and editor
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg zip
+          python -m pip install --upgrade pip
+          pip install --upgrade gradio_client pillow
+
+      - name: Generate nine AI video shots and edit three short films
+        env:
+          PYTHONUNBUFFERED: '1'
+          GRADIO_ANALYTICS_ENABLED: 'False'
+        run: |
+          mkdir -p generated_videos generation_logs work
+          echo "$GITHUB_RUN_ID" > generation_logs/run_id.txt
+          python video_generation/generate.py
+
+      - name: Upload generated films
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultivation-cinematic-videos
+          path: |
+            generated_videos/*
+            generation_logs/*
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Commit final films and logs
+        if: always()
+        run: |
+          git config user.name 'video-generation-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add generated_videos generation_logs || true
+          git diff --cached --quiet || git commit -m 'feat: generate three cinematic cultivation films'
+          git push
