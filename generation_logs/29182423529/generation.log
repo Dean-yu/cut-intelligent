@@ -1,0 +1,240 @@
+[2026-07-12 06:17:36] START tianyuan
+[2026-07-12 06:17:36] START jitian
+[2026-07-12 06:17:36] START shengmeng
+[2026-07-12 06:17:36] GENERATE jitian_1_raw.mp4 space=zerogpu-aoti/wan2-2-fp8da-aoti-faster attempt=1 seed=71750
+[2026-07-12 06:17:36] GENERATE tianyuan_1_raw.mp4 space=zerogpu-aoti/wan2-2-fp8da-aoti-faster attempt=1 seed=71720
+[2026-07-12 06:17:36] GENERATE shengmeng_1_raw.mp4 space=zerogpu-aoti/wan2-2-fp8da-aoti-faster attempt=1 seed=71780
+[2026-07-12 06:17:37] ERROR zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 20s left). Try again in 23:59:59. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+[2026-07-12 06:17:49] GENERATE tianyuan_1_raw.mp4 space=r3gm/wan2-2-fp8da-aoti-preview-2c attempt=1 seed=71720
+[2026-07-12 06:17:50] ERROR r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -18s left). Try again in 23:59:47. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+[2026-07-12 06:18:02] GENERATE tianyuan_1_raw.mp4 space=zerogpu-aoti/wan2-2-fp8da-aoti-faster attempt=2 seed=71720
+[2026-07-12 06:18:03] ERROR zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 20s left). Try again in 23:59:34. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+[2026-07-12 06:18:17] DONE shengmeng_1_raw.mp4 bytes=583266
+[2026-07-12 06:18:17] RUN ffmpeg -y -sseof -0.08 -i /home/runner/work/cut-intelligent/cut-intelligent/work/29182423529/shengmeng_1_raw.mp4 -frames:v 1 -update 1 -vf scale=832:468:force_original_aspect_ratio=increase,crop=832:468 -q:v 2 /home/runner/work/cut-intelligent/cut-intelligent/work/29182423529/shengmeng_1_last.jpg
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/home/runner/work/cut-intelligent/cut-intelligent/work/29182423529/shengmeng_1_raw.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf59.27.100
+  Duration: 00:00:04.06, start: 0.000000, bitrate: 1148 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 832x480 [SAR 1:1 DAR 26:15], 1146 kb/s, 16 fps, 16 tbr, 16384 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc59.37.100 libx264
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+[swscaler @ 0x55e6958e4780] deprecated pixel format used, make sure you did set range correctly
+Output #0, image2, to '/home/runner/work/cut-intelligent/cut-intelligent/work/29182423529/shengmeng_1_last.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Video: mjpeg, yuvj420p(pc, progressive), 832x468 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 16 fps, 16 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 mjpeg
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=2.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    
+[out#0/image2 @ 0x55e69584c800] video:86kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+frame=    1 fps=0.0 q=2.0 Lsize=N/A time=00:00:00.00 bitrate=N/A speed=   0x    
+
+[2026-07-12 06:18:17] GENERATE shengmeng_2_raw.mp4 space=zerogpu-aoti/wan2-2-fp8da-aoti-faster attempt=1 seed=71877
+[2026-07-12 06:18:18] DONE jitian_1_raw.mp4 bytes=645555
+[2026-07-12 06:18:18] RUN ffmpeg -y -sseof -0.08 -i /home/runner/work/cut-intelligent/cut-intelligent/work/29182423529/jitian_1_raw.mp4 -frames:v 1 -update 1 -vf scale=832:468:force_original_aspect_ratio=increase,crop=832:468 -q:v 2 /home/runner/work/cut-intelligent/cut-intelligent/work/29182423529/jitian_1_last.jpg
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/home/runner/work/cut-intelligent/cut-intelligent/work/29182423529/jitian_1_raw.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf59.27.100
+  Duration: 00:00:04.06, start: 0.000000, bitrate: 1271 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 832x480 [SAR 1:1 DAR 26:15], 1268 kb/s, 16 fps, 16 tbr, 16384 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc59.37.100 libx264
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+[swscaler @ 0x55f2c1979000] deprecated pixel format used, make sure you did set range correctly
+Output #0, image2, to '/home/runner/work/cut-intelligent/cut-intelligent/work/29182423529/jitian_1_last.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Video: mjpeg, yuvj420p(pc, progressive), 832x468 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 16 fps, 16 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 mjpeg
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=2.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    
+[out#0/image2 @ 0x55f2c195b900] video:72kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+frame=    1 fps=0.0 q=2.0 Lsize=N/A time=00:00:00.00 bitrate=N/A speed=   0x    
+
+[2026-07-12 06:18:18] GENERATE jitian_2_raw.mp4 space=zerogpu-aoti/wan2-2-fp8da-aoti-faster attempt=1 seed=71847
+[2026-07-12 06:18:19] ERROR zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 20s left). Try again in 23:59:17. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+[2026-07-12 06:18:27] GENERATE tianyuan_1_raw.mp4 space=r3gm/wan2-2-fp8da-aoti-preview-2c attempt=2 seed=71720
+[2026-07-12 06:18:27] ERROR r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -18s left). Try again in 23:59:09. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+[2026-07-12 06:18:31] GENERATE jitian_2_raw.mp4 space=r3gm/wan2-2-fp8da-aoti-preview-2c attempt=1 seed=71847
+[2026-07-12 06:18:32] ERROR r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -18s left). Try again in 23:59:04. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+[2026-07-12 06:18:44] GENERATE jitian_2_raw.mp4 space=zerogpu-aoti/wan2-2-fp8da-aoti-faster attempt=2 seed=71847
+[2026-07-12 06:18:45] ERROR zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 20s left). Try again in 23:58:51. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+[2026-07-12 06:18:51] GENERATE tianyuan_1_raw.mp4 space=zerogpu-aoti/wan2-2-fp8da-aoti-faster attempt=3 seed=71720
+[2026-07-12 06:18:52] ERROR zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 20s left). Try again in 23:58:44. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+[2026-07-12 06:18:59] DONE shengmeng_2_raw.mp4 bytes=663868
+[2026-07-12 06:18:59] RUN ffmpeg -y -sseof -0.08 -i /home/runner/work/cut-intelligent/cut-intelligent/work/29182423529/shengmeng_2_raw.mp4 -frames:v 1 -update 1 -vf scale=832:468:force_original_aspect_ratio=increase,crop=832:468 -q:v 2 /home/runner/work/cut-intelligent/cut-intelligent/work/29182423529/shengmeng_2_last.jpg
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/home/runner/work/cut-intelligent/cut-intelligent/work/29182423529/shengmeng_2_raw.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf59.27.100
+  Duration: 00:00:04.06, start: 0.000000, bitrate: 1307 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 832x480 [SAR 1:1 DAR 26:15], 1304 kb/s, 16 fps, 16 tbr, 16384 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc59.37.100 libx264
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+[swscaler @ 0x56541a71a180] deprecated pixel format used, make sure you did set range correctly
+Output #0, image2, to '/home/runner/work/cut-intelligent/cut-intelligent/work/29182423529/shengmeng_2_last.jpg':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Video: mjpeg, yuvj420p(pc, progressive), 832x468 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 16 fps, 16 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 mjpeg
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=2.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    
+[out#0/image2 @ 0x56541a6fc980] video:55kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+frame=    1 fps=0.0 q=2.0 Lsize=N/A time=00:00:00.00 bitrate=N/A speed=   0x    
+
+[2026-07-12 06:18:59] GENERATE shengmeng_3_raw.mp4 space=zerogpu-aoti/wan2-2-fp8da-aoti-faster attempt=1 seed=71974
+[2026-07-12 06:19:00] ERROR zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 0s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+[2026-07-12 06:19:09] GENERATE jitian_2_raw.mp4 space=r3gm/wan2-2-fp8da-aoti-preview-2c attempt=2 seed=71847
+[2026-07-12 06:19:10] ERROR r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -38s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+[2026-07-12 06:19:12] GENERATE shengmeng_3_raw.mp4 space=r3gm/wan2-2-fp8da-aoti-preview-2c attempt=1 seed=71974
+[2026-07-12 06:19:13] ERROR r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -38s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+[2026-07-12 06:19:25] GENERATE shengmeng_3_raw.mp4 space=zerogpu-aoti/wan2-2-fp8da-aoti-faster attempt=2 seed=71974
+[2026-07-12 06:19:26] ERROR zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 0s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+[2026-07-12 06:19:28] GENERATE tianyuan_1_raw.mp4 space=r3gm/wan2-2-fp8da-aoti-preview-2c attempt=3 seed=71720
+[2026-07-12 06:19:29] ERROR r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -38s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+[2026-07-12 06:19:34] GENERATE jitian_2_raw.mp4 space=zerogpu-aoti/wan2-2-fp8da-aoti-faster attempt=3 seed=71847
+[2026-07-12 06:19:35] ERROR zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 0s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+[2026-07-12 06:19:50] GENERATE shengmeng_3_raw.mp4 space=r3gm/wan2-2-fp8da-aoti-preview-2c attempt=2 seed=71974
+[2026-07-12 06:19:50] ERROR r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -38s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+[2026-07-12 06:20:05] FATAL tianyuan: zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 20s left). Try again in 23:59:59. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -18s left). Try again in 23:59:47. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 20s left). Try again in 23:59:34. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -18s left). Try again in 23:59:09. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 20s left). Try again in 23:58:44. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -38s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+Traceback (most recent call last):
+  File "/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py", line 192, in <module>
+    report["worlds"][w] = f.result()
+                          ^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py", line 176, in world_job
+    shots.append({"shot": i, **generate(frame, prompt, clip, base + i * 97)})
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py", line 146, in generate
+    raise RuntimeError(" | ".join(errors))
+RuntimeError: zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 20s left). Try again in 23:59:59. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -18s left). Try again in 23:59:47. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 20s left). Try again in 23:59:34. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -18s left). Try again in 23:59:09. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 20s left). Try again in 23:58:44. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -38s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+
+[2026-07-12 06:20:11] GENERATE jitian_2_raw.mp4 space=r3gm/wan2-2-fp8da-aoti-preview-2c attempt=3 seed=71847
+[2026-07-12 06:20:12] ERROR r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -38s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+[2026-07-12 06:20:14] GENERATE shengmeng_3_raw.mp4 space=zerogpu-aoti/wan2-2-fp8da-aoti-faster attempt=3 seed=71974
+[2026-07-12 06:20:15] ERROR zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 0s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+[2026-07-12 06:20:48] FATAL jitian: zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 20s left). Try again in 23:59:17. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -18s left). Try again in 23:59:04. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 20s left). Try again in 23:58:51. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -38s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 0s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -38s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+Traceback (most recent call last):
+  File "/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py", line 192, in <module>
+    report["worlds"][w] = f.result()
+                          ^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py", line 176, in world_job
+    shots.append({"shot": i, **generate(frame, prompt, clip, base + i * 97)})
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py", line 146, in generate
+    raise RuntimeError(" | ".join(errors))
+RuntimeError: zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 20s left). Try again in 23:59:17. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -18s left). Try again in 23:59:04. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 20s left). Try again in 23:58:51. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -38s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 0s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -38s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+
+[2026-07-12 06:20:51] GENERATE shengmeng_3_raw.mp4 space=r3gm/wan2-2-fp8da-aoti-preview-2c attempt=3 seed=71974
+[2026-07-12 06:20:52] ERROR r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -38s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+[2026-07-12 06:21:28] FATAL shengmeng: zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 0s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -38s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 0s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -38s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 0s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -38s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+Traceback (most recent call last):
+  File "/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py", line 192, in <module>
+    report["worlds"][w] = f.result()
+                          ^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py", line 176, in world_job
+    shots.append({"shot": i, **generate(frame, prompt, clip, base + i * 97)})
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/cut-intelligent/cut-intelligent/video_generation/generate.py", line 146, in generate
+    raise RuntimeError(" | ".join(errors))
+RuntimeError: zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 0s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -38s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 0s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -38s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | zerogpu-aoti/wan2-2-fp8da-aoti-faster: AppError: You have exceeded your ZeroGPU quota (80s requested vs. 0s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | r3gm/wan2-2-fp8da-aoti-preview-2c: AppError: You have exceeded your ZeroGPU quota (76s requested vs. -38s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+

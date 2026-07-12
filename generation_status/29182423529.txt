@@ -1,3 +1,3 @@
-status=running
+status=completed
 run_id=29182423529
-started_at=2026-07-12T06:17:09Z
+finished_at=2026-07-12T06:21:29Z
