@@ -4,10 +4,13 @@ on:
   push:
     branches: [main]
     paths:
-      - '.github/workflows/generate-cinematic-videos.yml'
       - 'video_generation/generate.py'
       - 'video_generation/inputs/**'
   workflow_dispatch:
+
+concurrency:
+  group: cultivation-cinematic-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -18,6 +21,17 @@ jobs:
     timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
+
+      - name: Publish run identifier
+        run: |
+          git config user.name 'video-generation-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git pull --rebase origin main
+          mkdir -p generation_status
+          printf 'status=running\nrun_id=%s\nstarted_at=%s\n' "$GITHUB_RUN_ID" "$(date -u +%FT%TZ)" > "generation_status/${GITHUB_RUN_ID}.txt"
+          git add "generation_status/${GITHUB_RUN_ID}.txt"
+          git commit -m "chore: mark cinematic video run ${GITHUB_RUN_ID} started"
+          git push
 
       - uses: actions/setup-python@v5
         with:
@@ -36,17 +50,16 @@ jobs:
           GRADIO_ANALYTICS_ENABLED: 'False'
         run: |
           mkdir -p generated_videos generation_logs work
-          echo "$GITHUB_RUN_ID" > generation_logs/run_id.txt
           python video_generation/generate.py
 
       - name: Upload generated films
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: cultivation-cinematic-videos
+          name: cultivation-cinematic-videos-${{ github.run_id }}
           path: |
-            generated_videos/*
-            generation_logs/*
+            generated_videos/${{ github.run_id }}/*
+            generation_logs/${{ github.run_id }}/*
           if-no-files-found: warn
           retention-days: 7
 
@@ -55,6 +68,8 @@ jobs:
         run: |
           git config user.name 'video-generation-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add generated_videos generation_logs || true
-          git diff --cached --quiet || git commit -m 'feat: generate three cinematic cultivation films'
+          printf 'status=completed\nrun_id=%s\nfinished_at=%s\n' "$GITHUB_RUN_ID" "$(date -u +%FT%TZ)" > "generation_status/${GITHUB_RUN_ID}.txt"
+          git add "generated_videos/${GITHUB_RUN_ID}" "generation_logs/${GITHUB_RUN_ID}" "generation_status/${GITHUB_RUN_ID}.txt" || true
+          git diff --cached --quiet || git commit -m "feat: publish cinematic video run ${GITHUB_RUN_ID}"
+          git pull --rebase origin main
           git push
