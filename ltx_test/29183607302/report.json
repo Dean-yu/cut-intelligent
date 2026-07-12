@@ -1,0 +1,63 @@
+{
+  "run_id": "29183607302",
+  "model": "Lightricks/ltx-video-distilled",
+  "worlds": {
+    "tianyuan": {
+      "final": "01_天元界_回风符盘.mp4",
+      "bytes": 2381957,
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "24/1"
+          },
+          {
+            "codec_name": "aac",
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "6.416667",
+          "size": "2381957"
+        }
+      },
+      "generated_clips": [
+        {
+          "seed": 71623,
+          "bytes": 275670,
+          "result": [
+            {
+              "video": "/tmp/gradio/bbd9ef6f412f32eefdbd14f37a8011c450e43412e3db371b2be6d31c5a621b02/output_13387.mp4",
+              "subtitles": null
+            },
+            71623
+          ]
+        },
+        {
+          "seed": 71720,
+          "bytes": 263682,
+          "result": [
+            {
+              "video": "/tmp/gradio/a0096cea39d03174d610b5afbf153d42e983669d80956d5e6b0ec274dc44551a/output_49037.mp4",
+              "subtitles": null
+            },
+            71720
+          ]
+        }
+      ]
+    }
+  },
+  "errors": {
+    "jitian": {
+      "message": "RuntimeError: attempt 1: AppError: You have exceeded your ZeroGPU quota (120s requested vs. -60s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | attempt 2: AppError: You have exceeded your ZeroGPU quota (120s requested vs. -60s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | attempt 3: AppError: You have exceeded your ZeroGPU quota (120s requested vs. -60s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/cut-intelligent/cut-intelligent/video_generation/test_ltx.py\", line 206, in main\n    second_info = generate_clip(client, continuation, spec[\"prompts\"][1], clip2, spec[\"seed\"] + 97)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cut-intelligent/cut-intelligent/video_generation/test_ltx.py\", line 155, in generate_clip\n    raise RuntimeError(\" | \".join(failures))\nRuntimeError: attempt 1: AppError: You have exceeded your ZeroGPU quota (120s requested vs. -60s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | attempt 2: AppError: You have exceeded your ZeroGPU quota (120s requested vs. -60s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | attempt 3: AppError: You have exceeded your ZeroGPU quota (120s requested vs. -60s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens\n"
+    },
+    "shengmeng": {
+      "message": "RuntimeError: attempt 1: AppError: You have exceeded your ZeroGPU quota (120s requested vs. -60s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | attempt 2: AppError: You have exceeded your ZeroGPU quota (120s requested vs. -60s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | attempt 3: AppError: You have exceeded your ZeroGPU quota (120s requested vs. -60s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/cut-intelligent/cut-intelligent/video_generation/test_ltx.py\", line 204, in main\n    first_info = generate_clip(client, source, spec[\"prompts\"][0], clip1, spec[\"seed\"])\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cut-intelligent/cut-intelligent/video_generation/test_ltx.py\", line 155, in generate_clip\n    raise RuntimeError(\" | \".join(failures))\nRuntimeError: attempt 1: AppError: You have exceeded your ZeroGPU quota (120s requested vs. -60s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | attempt 2: AppError: You have exceeded your ZeroGPU quota (120s requested vs. -60s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens | attempt 3: AppError: You have exceeded your ZeroGPU quota (120s requested vs. -60s left). Try again in 0:00:00. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens\n"
+    }
+  }
+}
