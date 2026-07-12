@@ -1,0 +1,34 @@
+{
+  "run_id": "29183757387",
+  "status": "completed",
+  "generation": {
+    "space": "Saravutw/WAN2.2_I2V_LIGHTNING_4-8step_custom",
+    "seed": 71877,
+    "result": [
+      "/tmp/gradio/5dc6a5d9879efa367adb9b092a927fd495dcc95b05248468fb0ebc5484823404/tmpqu6fa02p.mp4",
+      "/tmp/gradio/5dc6a5d9879efa367adb9b092a927fd495dcc95b05248468fb0ebc5484823404/tmpqu6fa02p.mp4",
+      71877
+    ],
+    "bytes": 1275006
+  },
+  "final": "03_圣盟_第一次违抗.mp4",
+  "probe": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "codec_name": "aac",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "5.650000",
+      "size": "2800153"
+    }
+  }
+}
