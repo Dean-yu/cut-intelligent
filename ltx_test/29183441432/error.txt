@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/home/runner/work/cut-intelligent/cut-intelligent/video_generation/test_ltx.py", line 64, in <module>
+    result = client.predict(
+             ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/gradio_client/client.py", line 499, in predict
+    ).result()
+      ^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/gradio_client/client.py", line 1484, in result
+    return super().result(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/gradio_client/client.py", line 1080, in _inner
+    predictions = _predict(*data, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/gradio_client/client.py", line 1200, in _predict
+    raise AppError(message=message, **result)
+gradio_client.exceptions.AppError: You have exceeded your ZeroGPU quota (120s requested vs. 59s left). Try again in 9:54:46. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
