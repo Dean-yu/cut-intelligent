@@ -54,3 +54,5 @@ jobs:
           git add ltx_test/${GITHUB_RUN_ID} || true
           git diff --cached --quiet || git commit -m "video: publish three LTX cinematic films ${GITHUB_RUN_ID}"
           git push
+
+# Explicit rerun marker: 2026-07-12T07:02Z
