@@ -1,0 +1,53 @@
+name: Test Independent LTX Video Route
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/test-ltx-video.yml'
+      - 'video_generation/test_ltx.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test-ltx:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install client
+        run: |
+          python -m pip install --upgrade pip
+          pip install --upgrade gradio_client pillow
+
+      - name: Generate true LTX test clip
+        env:
+          PYTHONUNBUFFERED: '1'
+          GRADIO_ANALYTICS_ENABLED: 'False'
+        run: python video_generation/test_ltx.py
+
+      - name: Upload test result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ltx-video-test-${{ github.run_id }}
+          path: ltx_test/${{ github.run_id }}/*
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Publish diagnostic result
+        if: always()
+        run: |
+          git config user.name 'video-generation-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git pull --rebase origin main
+          git add ltx_test/${GITHUB_RUN_ID} || true
+          git diff --cached --quiet || git commit -m "test: publish LTX route ${GITHUB_RUN_ID}"
+          git push
