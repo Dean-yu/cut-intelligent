@@ -1,0 +1,56 @@
+name: Generate Covenant Alliance Wan Film
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/generate-shengmeng-wan.yml'
+      - 'video_generation/generate_shengmeng_wan.py'
+      - 'video_generation/inputs/shengmeng.b64'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-shengmeng:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install generator and editor
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          pip install --upgrade gradio_client pillow
+
+      - name: Generate real Covenant Alliance temporal film
+        env:
+          PYTHONUNBUFFERED: '1'
+          GRADIO_ANALYTICS_ENABLED: 'False'
+        run: python video_generation/generate_shengmeng_wan.py
+
+      - name: Upload film and diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shengmeng-wan-film-${{ github.run_id }}
+          path: wan_shengmeng/${{ github.run_id }}/*
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Publish output
+        if: always()
+        run: |
+          git config user.name 'video-generation-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git pull --rebase origin main
+          git add wan_shengmeng/${GITHUB_RUN_ID} || true
+          git diff --cached --quiet || git commit -m "video: publish Covenant Alliance Wan film ${GITHUB_RUN_ID}"
+          git push
